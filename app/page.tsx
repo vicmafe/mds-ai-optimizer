@@ -1,9 +1,33 @@
-export default function Home() {
+"use client";
+
+import { Button } from "@/components/Button";
+import { Card } from "@/components/Card";
+import { useState } from "react";
+import { normalizeText } from "@/lib/textUtils";
+
+export default function HomePage() {
+  const [input, setInput] = useState("");
+  const [output, setOutput] = useState("");
+
+  const handleProcess = () => {
+    setOutput(normalizeText(input));
+  };
+
   return (
-    <main className="flex min-h-screen items-center justify-center bg-gray-100">
-      <button className="rounded-lg bg-blue-600 px-6 py-3 text-white hover:bg-blue-700">
-        Hello World
-      </button>
-    </main>
+    <Card>
+      <h1 className="text-xl font-bold mb-4">Hello World 🚀</h1>
+      <textarea
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+        className="w-full p-2 border rounded mb-4"
+        placeholder="Digite seu texto aqui..."
+      />
+      <Button onClick={handleProcess}>Processar</Button>
+      {output && (
+        <p className="mt-4">
+          <span className="font-semibold">Resultado:</span> {output}
+        </p>
+      )}
+    </Card>
   );
 }
