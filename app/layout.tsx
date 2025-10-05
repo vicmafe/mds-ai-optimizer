@@ -1,16 +1,13 @@
-import "@/styles/globals.css";
-import { Layout } from "@/components/Layout";
+import "../styles/globals.css";
+import type { Metadata } from "next";
+import Layout from "../components/Layout";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "MDS AI Optimizer",
-  description: "Refinamento heurístico de textos - MVP",
+  description: "Dashboard de campanhas e relatórios",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
       <body>
