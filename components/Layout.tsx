@@ -35,7 +35,7 @@ export default function Layout({ children }: LayoutProps) {
       <div className="flex-1 flex flex-col">
         {/* Header */}
         <header className="h-16 bg-white shadow flex items-center justify-between px-6">
-          <h1 className="text-lg font-semibold">MDS AI Optimizer</h1>
+          <h1 className="text-lg">Olá agência xyz</h1>
           <button className="px-3 py-1 rounded bg-gray-800 text-white hover:bg-gray-700">
             Sair
           </button>
