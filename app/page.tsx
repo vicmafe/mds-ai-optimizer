@@ -1,34 +1,21 @@
-"use client";
-
-import { Button } from "@/components/Button";
-import { Card } from "@/components/Card";
-import { useState } from "react";
-import { normalizeText } from "@/lib/textUtils";
+import Image from "next/image";
+import ImgCapaResultados from "@/lib/img/ImgCapaResultados.png";
+import Link from "next/link";
 
 export default function HomePage() {
-  const [input, setInput] = useState("");
-  const [output, setOutput] = useState("");
-
-  const handleProcess = () => {
-    setOutput(normalizeText(input));
-  };
-
+  
   return (
-    <Card>
-      <h1 className="text-xl font-bold mb-4">Hello World 🚀</h1>
-      <textarea
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-        className="w-full p-2 border rounded mb-4"
-        placeholder="Digite seu texto aqui..."
+    <main style={{ width: '100%', height: '100%', position: 'relative' }}>
+      <Link
+        href="/campaigns"
+      >
+      <Image
+        src={ImgCapaResultados}
+        alt="Menos tempo em relatórios, mais resultado"
+        layout="fill"
       />
-      <Button onClick={handleProcess}>Processar</Button>
-      {output && (
-        <p className="mt-4">
-          <span className="font-semibold">Resultado:</span> {output}
-        </p>
-      )}
-    </Card>
+      </Link>
+    </main>
   );
 }
 

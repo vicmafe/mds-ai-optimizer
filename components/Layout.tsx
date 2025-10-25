@@ -12,20 +12,34 @@ export default function Layout({ children }: LayoutProps) {
     <div className="flex h-screen bg-gray-100">
       {/* Sidebar */}
       <aside className="w-64 bg-white shadow-md flex flex-col">
-        <div className="h-16 flex items-center justify-center font-bold text-xl border-b">
+        <Link 
+          href="/"
+          className="h-16 flex items-center justify-center font-bold text-xl border-b"
+        >
           MDS AI
-        </div>
+        </Link>
         <nav className="flex-1 p-4 space-y-2">
-          <Link href="/" className="block p-2 rounded hover:bg-gray-200">
-            Campanhas
+          <Link 
+            href="/campaigns"
+            className="block p-2 rounded hover:bg-gray-200 border 1px border-color gray"
+          >
+          Campanhas
           </Link>
-          <Link href="/relatorios" className="block p-2 rounded hover:bg-gray-200">
+          <Link 
+            href="/relatorios" className="block p-2 rounded hover:bg-gray-200 border 1px border-color gray"
+          >
             Relatórios
           </Link>
-          <Link href="/alertas" className="block p-2 rounded hover:bg-gray-200">
+          <Link 
+            href="/alertas"
+            className="block p-2 rounded hover:bg-gray-200 border 1px border-color gray"
+          >
             Alertas
           </Link>
-          <Link href="/configuracoes" className="block p-2 rounded hover:bg-gray-200">
+          <Link 
+            href="/configuracoes"
+            className="block p-2 rounded hover:bg-gray-200 border 1px border-color gray"
+          >
             Configurações
           </Link>
         </nav>
@@ -35,15 +49,11 @@ export default function Layout({ children }: LayoutProps) {
       <div className="flex-1 flex flex-col">
         {/* Header */}
         <header className="h-16 bg-white shadow flex items-center justify-between px-6">
-          <h1 className="text-lg">Olá agência xyz</h1>
-          <button className="px-3 py-1 rounded bg-gray-800 text-white hover:bg-gray-700">
-            Sair
-          </button>
+          <h1 className="text-lg">Agência xyz</h1>
         </header>
-
         {/* Page Content */}
-        <main className="flex-1 overflow-y-auto p-6">{children}</main>
+        <main className="flex-1 overflow-y-auto">{children}</main>
       </div>
     </div>
-  );
+  ); 
 }
